@@ -56,7 +56,7 @@ body{
   padding:10px 20px;
   cursor: pointer;
 }
-.tab1{
+.active{
   background-color: #E2B616;
 }
 .tab:hover{

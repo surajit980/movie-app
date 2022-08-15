@@ -5,7 +5,7 @@ const Movies =()=>{
     return(
         data.map((movie)=>{
            return(
-            <MovieCart movie={movie}/>
+            <MovieCart movie={movie} key={movie.id}/>
            )
         })
     )
