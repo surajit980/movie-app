@@ -1,4 +1,7 @@
-// {
-//     type:"ADD_MOVIES",
-//     movies:[m1,m2,m3]
-// }
+//add movies action creates
+export function addMovies(data){
+    return {
+        type:"ADD_MOVIES",
+        movies:data
+    }
+}

@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Movies from './Movies';
 import Favourites from './Favourites';
 import React from 'react';
+import { addMovies } from '../actions';
 import {data} from "./data"
 
 class App extends React.Component{
@@ -16,10 +17,7 @@ class App extends React.Component{
     this.props.store.subscribe(()=>{
       this.forceUpdate()
     })
-    this.props.store.dispatch({
-      type:"ADD_MOVIES",
-      movies:data
-    })
+    this.props.store.dispatch(addMovies(data))
   }
   toggleToTrue=()=>{
     if (this.state.toggle) {
