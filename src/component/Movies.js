@@ -1,9 +1,9 @@
 import MovieCart from "./MovieCart";
-import {data} from "./data"
+// import {data} from "./data"
 
-const Movies =()=>{
+const Movies =(props)=>{
     return(
-        data.map((movie)=>{
+        props.data.map((movie)=>{
            return(
             <MovieCart movie={movie} key={movie.id}/>
            )
