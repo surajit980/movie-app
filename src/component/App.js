@@ -1,10 +1,7 @@
 import './style/App.css';
 import Navbar from './Navbar';
 import Movies from './Movies';
-import Favourites from './Favourites';
 import React from 'react';
-import { addMovies } from '../actions';
-import {data} from "./data"
 
 class App extends React.Component{
   constructor(){
@@ -13,12 +10,7 @@ class App extends React.Component{
       toggle:true
     }
   }
-  componentDidMount=()=>{
-    this.props.store.subscribe(()=>{
-      this.forceUpdate()
-    })
-    this.props.store.dispatch(addMovies(data))
-  }
+  
   toggleToTrue=()=>{
     if (this.state.toggle) {
       return;
@@ -45,7 +37,7 @@ class App extends React.Component{
             <div className={this.state.toggle?"tab":"tab active"} onClick={this.toggleToFalse} >Favourites</div>
           </div>
           <hr/>
-          {this.state.toggle?<Movies data={this.props.store.getState()}/>:<Favourites/>}
+          <Movies isTrue={this.state.toggle}/>
         </div>
       </div>
     );
