@@ -12,6 +12,11 @@ export function moviesReducer(state=initialMoviesState,action) {
                 ...state,
                 list:action.movies
             }
+        case "ADD_MOVIE":
+            return{
+                ...state,
+                list:[action.movie,...state.list]
+            }
         case "ADD_FAVOURITE":
             return {
                 ...state,
@@ -19,7 +24,7 @@ export function moviesReducer(state=initialMoviesState,action) {
             }
         case "REMOVE_FAVOURITES":
             const filterArray=state.favourites.filter((movie)=>
-                movie.id !== action.movie.id
+                movie.Title !== action.movie.Title
             )
             return{
                 ...state,
@@ -36,7 +41,15 @@ const initialSearchState={
     result:{}
 }
 export function searchReducer(state=initialSearchState,action){
-    return state;
+   switch (action.type) {
+    case "ADD_MOVIE_SEARCH_RESULT":
+        return {
+            ...state,
+            result:action.movie
+        }
+    default:
+        return state
+   }
 }
 // ------------------------------------------------------------------------------------
 

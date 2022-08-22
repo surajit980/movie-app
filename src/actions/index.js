@@ -6,6 +6,12 @@ export function addMovies(data){
     }
 }
 
+export function addMovie(movie){
+    return {
+        type:"ADD_MOVIE",
+        movie:movie
+    }
+}
 
 export function addFavourites(movie){
     return {
@@ -17,6 +23,13 @@ export function addFavourites(movie){
 export function removeFavourites(movie){
     return {
         type:"REMOVE_FAVOURITES",
+        movie:movie
+    }
+}
+
+export const addMovieSearchResult=(movie)=>{
+    return{
+        type:"ADD_MOVIE_SEARCH_RESULT",
         movie:movie
     }
 }

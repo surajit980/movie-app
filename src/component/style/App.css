@@ -41,6 +41,24 @@ body{
   font-size: 18px;
 }
 
+/* search movie cart component */
+.search-movie-cart{
+  position: absolute;
+  background-color: white;
+  width: 580px;
+  top: 55px;
+  right: 385px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  display: flex;
+}
+.smc-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+
 
 /* main */
 .main-center{

@@ -26,8 +26,10 @@ class Movies extends React.Component {
     } else {
         movies = store.getState().movies.favourites;
     }
+    let count=0;
     return movies.map((movie) => {
-      return <MovieCart movie={movie} key={movie.id} isFav={this.checkFavourites(movie)}/>;
+      count++;
+      return <MovieCart movie={movie} key={count} isFav={this.checkFavourites(movie)}/>;
     });
   }
 }
