@@ -13,7 +13,7 @@ class Movies extends React.Component {
     store.dispatch(addMovies(data));
   };
   checkFavourites=(movie)=>{
-    const tempFav=store.getState().favourites;
+    const tempFav=store.getState().movies.favourites;
     if (tempFav.indexOf(movie)>=0) {
         return true;
     }
@@ -22,12 +22,12 @@ class Movies extends React.Component {
   render() {
     let movies;
     if (this.props.isTrue) {
-        movies = store.getState().list;
+        movies = store.getState().movies.list;
     } else {
-        movies = store.getState().favourites;
+        movies = store.getState().movies.favourites;
     }
     return movies.map((movie) => {
-      return <MovieCart movie={movie} key={movie.id} store={store} isFav={this.checkFavourites(movie)}/>;
+      return <MovieCart movie={movie} key={movie.id} isFav={this.checkFavourites(movie)}/>;
     });
   }
 }

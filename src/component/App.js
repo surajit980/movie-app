@@ -10,23 +10,18 @@ class App extends React.Component{
       toggle:true
     }
   }
-  
+  // ---------------------------for show movies and favourites acording to user--------------------------
   toggleToTrue=()=>{
-    if (this.state.toggle) {
-      return;
-    }
     this.setState({
       toggle:true
     })
   }
   toggleToFalse=()=>{
-    if (!this.state.toggle) {
-      return;
-    }
     this.setState({
       toggle:false
     })
   }
+  // --------------------------------------------------------------------------------------------------------
   render(){
     return (
       <div className="App">
